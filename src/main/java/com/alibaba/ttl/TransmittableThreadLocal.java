@@ -3,6 +3,7 @@ package com.alibaba.ttl;
 import edu.umd.cs.findbugs.annotations.NonNull;
 import edu.umd.cs.findbugs.annotations.Nullable;
 
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -114,6 +115,118 @@ public class TransmittableThreadLocal<T> extends InheritableThreadLocal<T> imple
     }
 
     /**
+     * Creates a transmittable thread local variable.
+     * The initial value({@link #initialValue()}) of the variable is
+     * determined by invoking the {@link #get()} method on the {@code Supplier}.
+     *
+     * @param <S>      the type of the thread local's value
+     * @param supplier the supplier to be used to determine the initial value
+     * @return a new transmittable thread local variable
+     * @throws NullPointerException if the specified supplier is null
+     * @see #withInitialAndCopier(Supplier, TtlCopier)
+     * @since 2.12.2
+     */
+    @NonNull
+    @SuppressWarnings("ConstantConditions")
+    public static <S> TransmittableThreadLocal<S> withInitial(@NonNull Supplier<? extends S> supplier) {
+        if (supplier == null) throw new NullPointerException("supplier is null");
+
+        return new SuppliedTransmittableThreadLocal<S>(supplier, null, null);
+    }
+
+    /**
+     * Creates a transmittable thread local variable.
+     * The initial value({@link #initialValue()}) of the variable is
+     * determined by invoking the {@link #get()} method on the {@code Supplier};
+     * and the child value({@link #childValue(Object)}) and the transmitting value({@link #copy(Object)}) of the variable is
+     * determined by invoking the {@link  TtlCopier#copy(Object)} method on the {@code TtlCopier}.
+     *
+     * @param <S>                        the type of the thread local's value
+     * @param supplier                   the supplier to be used to determine the initial value
+     * @param copierForChildValueAndCopy the ttl copier to be used to determine the child value and the transmitting value
+     * @return a new transmittable thread local variable
+     * @throws NullPointerException if the specified supplier or copier is null
+     * @see #withInitial(Supplier)
+     * @since 2.12.3
+     */
+    @NonNull
+    @ParametersAreNonnullByDefault
+    @SuppressWarnings("ConstantConditions")
+    public static <S> TransmittableThreadLocal<S> withInitialAndCopier(Supplier<? extends S> supplier, TtlCopier<S> copierForChildValueAndCopy) {
+        if (supplier == null) throw new NullPointerException("supplier is null");
+        if (copierForChildValueAndCopy == null) throw new NullPointerException("ttl copier is null");
+
+        return new SuppliedTransmittableThreadLocal<S>(supplier, copierForChildValueAndCopy, copierForChildValueAndCopy);
+    }
+
+    /**
+     * Creates a transmittable thread local variable.
+     * The initial value({@link #initialValue()}) of the variable is
+     * determined by invoking the {@link #get()} method on the {@code Supplier};
+     * and the child value({@link #childValue(Object)}) and the transmitting value({@link #copy(Object)}) of the variable is
+     * determined by invoking the {@link  TtlCopier#copy(Object)} method on the {@code TtlCopier}.
+     * <p>
+     * <B><I>NOTE:</I></B><br>
+     * Recommend use {@link #withInitialAndCopier(Supplier, TtlCopier)} instead of this method.
+     * In most cases, the logic of determining the child value({@link #childValue(Object)})
+     * and the transmitting value({@link #copy(Object)}) should be the same.
+     *
+     * @param <S>                 the type of the thread local's value
+     * @param supplier            the supplier to be used to determine the initial value
+     * @param copierForChildValue the ttl copier to be used to determine the child value
+     * @param copierForCopy       the ttl copier to be used to determine the transmitting value
+     * @return a new transmittable thread local variable
+     * @throws NullPointerException if the specified supplier or copier is null
+     * @see #withInitial(Supplier)
+     * @see #withInitialAndCopier(Supplier, TtlCopier)
+     * @since 2.12.3
+     */
+    @NonNull
+    @ParametersAreNonnullByDefault
+    @SuppressWarnings("ConstantConditions")
+    public static <S> TransmittableThreadLocal<S> withInitialAndCopier(Supplier<? extends S> supplier, TtlCopier<S> copierForChildValue, TtlCopier<S> copierForCopy) {
+        if (supplier == null) throw new NullPointerException("supplier is null");
+        if (copierForChildValue == null) throw new NullPointerException("ttl copier for child value is null");
+        if (copierForCopy == null) throw new NullPointerException("ttl copier for copy value is null");
+
+        return new SuppliedTransmittableThreadLocal<S>(supplier, copierForChildValue, copierForCopy);
+    }
+
+    /**
+     * An extension of ThreadLocal that obtains its initial value from the specified {@code Supplier}
+     * and obtains its child value and transmitting value from the specified ttl copier.
+     */
+    private static final class SuppliedTransmittableThreadLocal<T> extends TransmittableThreadLocal<T> {
+        private final Supplier<? extends T> supplier;
+        private final TtlCopier<T> copierForChildValue;
+        private final TtlCopier<T> copierForCopy;
+
+        SuppliedTransmittableThreadLocal(Supplier<? extends T> supplier, TtlCopier<T> copierForChildValue, TtlCopier<T> copierForCopy) {
+            if (supplier == null) throw new NullPointerException("supplier is null");
+            this.supplier = supplier;
+            this.copierForChildValue = copierForChildValue;
+            this.copierForCopy = copierForCopy;
+        }
+
+        @Override
+        protected T initialValue() {
+            return supplier.get();
+        }
+
+        @Override
+        protected T childValue(T parentValue) {
+            if (copierForChildValue != null) return copierForChildValue.copy(parentValue);
+            else return super.childValue(parentValue);
+        }
+
+        @Override
+        public T copy(T parentValue) {
+            if (copierForCopy != null) return copierForCopy.copy(parentValue);
+            else return super.copy(parentValue);
+        }
+    }
+
+    /**
      * Computes the value for this transmittable thread-local variable
      * as a function of the source thread's value at the time the task
      * Object is created.
@@ -157,7 +270,7 @@ public class TransmittableThreadLocal<T> extends InheritableThreadLocal<T> imple
     }
 
     /**
-     * see {@link InheritableThreadLocal#get()}
+     * {@inheritDoc}
      */
     @Override
     public final T get() {
@@ -167,7 +280,7 @@ public class TransmittableThreadLocal<T> extends InheritableThreadLocal<T> imple
     }
 
     /**
-     * see {@link InheritableThreadLocal#set}
+     * {@inheritDoc}
      */
     @Override
     public final void set(T value) {
@@ -181,7 +294,7 @@ public class TransmittableThreadLocal<T> extends InheritableThreadLocal<T> imple
     }
 
     /**
-     * see {@link InheritableThreadLocal#remove()}
+     * {@inheritDoc}
      */
     @Override
     public final void remove() {
@@ -228,13 +341,17 @@ public class TransmittableThreadLocal<T> extends InheritableThreadLocal<T> imple
     }
 
     private static void doExecuteCallback(boolean isBefore) {
-        for (TransmittableThreadLocal<Object> threadLocal : holder.get().keySet()) {
+        // copy TTL Instances to avoid `ConcurrentModificationException`
+        // even adjust TTL instances in biz lifecycle callbacks(beforeExecute/afterExecute)
+        WeakHashMap<TransmittableThreadLocal<Object>, ?> ttlInstances = new WeakHashMap<TransmittableThreadLocal<Object>, Object>(holder.get());
+
+        for (TransmittableThreadLocal<Object> threadLocal : ttlInstances.keySet()) {
             try {
                 if (isBefore) threadLocal.beforeExecute();
                 else threadLocal.afterExecute();
             } catch (Throwable t) {
                 if (logger.isLoggable(Level.WARNING)) {
-                    logger.log(Level.WARNING, "TTL exception when " + (isBefore ? "beforeExecute" : "afterExecute") + ", cause: " + t.toString(), t);
+                    logger.log(Level.WARNING, "TTL exception when " + (isBefore ? "beforeExecute" : "afterExecute") + ", cause: " + t, t);
                 }
             }
         }
@@ -264,13 +381,15 @@ public class TransmittableThreadLocal<T> extends InheritableThreadLocal<T> imple
     }
 
     /**
-     * {@link Transmitter} transmit all values of {@link TransmittableThreadLocal}
-     * and registered {@link ThreadLocal}(registered by {@link Transmitter#registerThreadLocal})
-     * from the current thread to other thread by static methods
-     * {@link #capture()} =&gt; {@link #replay(Object)} =&gt; {@link #restore(Object)} (aka {@code CRR} operation).
+     * {@link Transmitter} transmit all {@link TransmittableThreadLocal}
+     * and registered {@link ThreadLocal} values of the current thread to other thread.
+     * <p>
+     * Transmittance is completed by static methods {@link #capture()} =&gt;
+     * {@link #replay(Object)} =&gt; {@link #restore(Object)} (aka {@code CRR} operation);
+     * {@link ThreadLocal} instances are registered by {@link Transmitter#registerThreadLocal}).
      * <p>
      * {@link Transmitter} is <b><i>internal</i></b> manipulation api for <b><i>framework/middleware integration</i></b>;
-     * In general, you will <b><i>never</i></b> use it in the <i>biz/application code</i>!
+     * In general, you will <b><i>never</i></b> use it in the <i>biz/application codes</i>!
      *
      * <h2>Framework/Middleware integration to TTL transmittance</h2>
      * Below is the example code:
@@ -298,7 +417,7 @@ public class TransmittableThreadLocal<T> extends InheritableThreadLocal<T> imple
      *     Transmitter.restore(backup); // (3)
      * }}</pre>
      * <p>
-     * see the implementation code of {@link TtlRunnable} and {@link TtlCallable} for more actual code sample.
+     * see the implementation code of {@link TtlRunnable} and {@link TtlCallable} for more actual code samples.
      * <p>
      * Of course, {@link #replay(Object)} and {@link #restore(Object)} operation can be simplified by util methods
      * {@link #runCallableWithCaptured(Object, Callable)} or {@link #runSupplierWithCaptured(Object, Supplier)}
@@ -325,7 +444,7 @@ public class TransmittableThreadLocal<T> extends InheritableThreadLocal<T> imple
      * }); // (2) + (3)}</pre>
      * <p>
      * The reason of providing 2 util methods is the different {@code throws Exception} type
-     * so as to satisfy your biz logic({@code lambda}):
+     * to satisfy your biz logic({@code lambda}):
      * <ol>
      * <li>{@link #runCallableWithCaptured(Object, Callable)}: {@code throws Exception}</li>
      * <li>{@link #runSupplierWithCaptured(Object, Supplier)}: No {@code throws}</li>
@@ -573,7 +692,7 @@ public class TransmittableThreadLocal<T> extends InheritableThreadLocal<T> imple
          * @param bizLogic biz logic
          * @param <R>      the return type of biz logic
          * @return the return value of biz logic
-         * @throws Exception exception threw by biz logic
+         * @throws Exception the exception threw by biz logic
          * @see #capture()
          * @see #replay(Object)
          * @see #restore(Object)
@@ -594,7 +713,7 @@ public class TransmittableThreadLocal<T> extends InheritableThreadLocal<T> imple
          * @param bizLogic biz logic
          * @param <R>      the return type of biz logic
          * @return the return value of biz logic
-         * @throws Exception exception threw by biz logic
+         * @throws Exception the exception threw by biz logic
          * @see #clear()
          * @see #restore(Object)
          * @since 2.9.0
@@ -619,7 +738,7 @@ public class TransmittableThreadLocal<T> extends InheritableThreadLocal<T> imple
          * If the registered {@link ThreadLocal} instance is {@link TransmittableThreadLocal} just ignores and return {@code true}.
          * since a {@link TransmittableThreadLocal} instance itself has the {@code Transmittable} ability,
          * it is unnecessary to register a {@link TransmittableThreadLocal} instance.
-         *
+         * <p>
          * <B><I>Caution:</I></B><br>
          * If the registered {@link ThreadLocal} instance is not {@link InheritableThreadLocal},
          * the instance can NOT <B><I>{@code inherit}</I></B> value from parent thread(aka. the <b>inheritable</b> ability)!
@@ -645,7 +764,7 @@ public class TransmittableThreadLocal<T> extends InheritableThreadLocal<T> imple
          * If the registered {@link ThreadLocal} instance is {@link TransmittableThreadLocal} just ignores and return {@code true}.
          * since a {@link TransmittableThreadLocal} instance itself has the {@code Transmittable} ability,
          * it is unnecessary to register a {@link TransmittableThreadLocal} instance.
-         *
+         * <p>
          * <B><I>Caution:</I></B><br>
          * If the registered {@link ThreadLocal} instance is not {@link InheritableThreadLocal},
          * the instance can NOT <B><I>{@code inherit}</I></B> value from parent thread(aka. the <b>inheritable</b> ability)!
@@ -668,7 +787,7 @@ public class TransmittableThreadLocal<T> extends InheritableThreadLocal<T> imple
          * If the registered {@link ThreadLocal} instance is {@link TransmittableThreadLocal} just ignores and return {@code true}.
          * since a {@link TransmittableThreadLocal} instance itself has the {@code Transmittable} ability,
          * it is unnecessary to register a {@link TransmittableThreadLocal} instance.
-         *
+         * <p>
          * <B><I>Caution:</I></B><br>
          * If the registered {@link ThreadLocal} instance is not {@link InheritableThreadLocal},
          * the instance can NOT <B><I>{@code inherit}</I></B> value from parent thread(aka. the <b>inheritable</b> ability)!
@@ -709,7 +828,7 @@ public class TransmittableThreadLocal<T> extends InheritableThreadLocal<T> imple
          * If the registered {@link ThreadLocal} instance is {@link TransmittableThreadLocal} just ignores and return {@code true}.
          * since a {@link TransmittableThreadLocal} instance itself has the {@code Transmittable} ability,
          * it is unnecessary to register a {@link TransmittableThreadLocal} instance.
-         *
+         * <p>
          * <B><I>Caution:</I></B><br>
          * If the registered {@link ThreadLocal} instance is not {@link InheritableThreadLocal},
          * the instance can NOT <B><I>{@code inherit}</I></B> value from parent thread(aka. the <b>inheritable</b> ability)!

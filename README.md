@@ -1,20 +1,22 @@
-# 📌 TransmittableThreadLocal(TTL) 📌
+# <div align="center"><a href="#dummy"><img src="docs/logo-blue.png" alt="📌 TransmittableThreadLocal(TTL)"></a></div>
 
-[![Build Status](https://img.shields.io/travis/alibaba/transmittable-thread-local/master?logo=travis-ci&logoColor=white)](https://travis-ci.org/alibaba/transmittable-thread-local)
-[![Windows Build Status](https://img.shields.io/appveyor/ci/oldratlee/transmittable-thread-local/master?label=windows%20build&logo=appveyor&logoColor=white)](https://ci.appveyor.com/project/oldratlee/transmittable-thread-local)
-[![Coverage Status](https://img.shields.io/codecov/c/github/alibaba/transmittable-thread-local/master?logo=codecov&logoColor=white)](https://codecov.io/gh/alibaba/transmittable-thread-local/branch/master)
-[![Maintainability](https://badgen.net/codeclimate/maintainability/codeclimate/codeclimate?icon=codeclimate)](https://codeclimate.com/github/alibaba/transmittable-thread-local)
-[![JDK support](https://img.shields.io/badge/JDK-6+-green?logo=java&logoColor=white)](https://openjdk.java.net/)  
-[![License](https://img.shields.io/github/license/alibaba/transmittable-thread-local?color=4D7A97)](https://www.apache.org/licenses/LICENSE-2.0.html)
-[![Javadocs](https://img.shields.io/github/release/alibaba/transmittable-thread-local?label=javadoc&color=3d7c47&logo=microsoft-academic&logoColor=white)](https://alibaba.github.io/transmittable-thread-local/apidocs/)
-[![Maven Central](https://img.shields.io/maven-central/v/com.alibaba/transmittable-thread-local?color=2d545e&logo=apache-maven&logoColor=white)](https://search.maven.org/artifact/com.alibaba/transmittable-thread-local)
-[![GitHub release](https://img.shields.io/github/release/alibaba/transmittable-thread-local)](https://github.com/alibaba/transmittable-thread-local/releases)  
-[![Chat at gitter.im](https://img.shields.io/gitter/room/alibaba/transmittable-thread-local?color=46BC99&logo=gitter&logoColor=white)](https://gitter.im/alibaba/transmittable-thread-local?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![GitHub Stars](https://img.shields.io/github/stars/alibaba/transmittable-thread-local)](https://github.com/alibaba/transmittable-thread-local/stargazers)
-[![GitHub Forks](https://img.shields.io/github/forks/alibaba/transmittable-thread-local)](https://github.com/alibaba/transmittable-thread-local/fork)
-[![GitHub repo dependents](https://badgen.net/github/dependents-repo/alibaba/transmittable-thread-local)](https://github.com/alibaba/transmittable-thread-local/network/dependents)
-[![GitHub issues](https://img.shields.io/github/issues/alibaba/transmittable-thread-local)](https://github.com/alibaba/transmittable-thread-local/issues)
-[![GitHub Contributors](https://img.shields.io/github/contributors/alibaba/transmittable-thread-local)](https://github.com/alibaba/transmittable-thread-local/graphs/contributors)
+<p align="center">
+<a href="https://ci.appveyor.com/project/oldratlee/transmittable-thread-local"><img src="https://img.shields.io/appveyor/ci/oldratlee/transmittable-thread-local/master?logo=appveyor&logoColor=white" alt="Build Status"></a>
+<a href="https://codecov.io/gh/alibaba/transmittable-thread-local/branch/master"><img src="https://img.shields.io/codecov/c/github/alibaba/transmittable-thread-local/master?logo=codecov&logoColor=white" alt="Coverage Status"></a>
+<a href="https://codeclimate.com/github/alibaba/transmittable-thread-local/maintainability"><img src="https://img.shields.io/codeclimate/maintainability/alibaba/transmittable-thread-local?logo=codeclimate&logoColor=white" alt="Maintainability"></a>
+<a href="https://openjdk.java.net/"><img src="https://img.shields.io/badge/Java-6+-green?logo=java&logoColor=white" alt="JDK support"></a>
+<a href="https://www.apache.org/licenses/LICENSE-2.0.html"><img src="https://img.shields.io/github/license/alibaba/transmittable-thread-local?color=4D7A97&logo=apache" alt="License"></a>
+<a href="https://alibaba.github.io/transmittable-thread-local/apidocs/"><img src="https://img.shields.io/github/release/alibaba/transmittable-thread-local?label=javadoc&color=3d7c47&logo=microsoft-academic&logoColor=white" alt="Javadocs"></a>
+<a href="https://search.maven.org/artifact/com.alibaba/transmittable-thread-local"><img src="https://img.shields.io/maven-central/v/com.alibaba/transmittable-thread-local?color=2d545e&logo=apache-maven&logoColor=white" alt="Maven Central"></a>
+<a href="https://github.com/alibaba/transmittable-thread-local/releases"><img src="https://img.shields.io/github/release/alibaba/transmittable-thread-local" alt="GitHub release"></a>
+<a href="https://github.com/alibaba/transmittable-thread-local/stargazers"><img src="https://img.shields.io/github/stars/alibaba/transmittable-thread-local" alt="GitHub Stars"></a>
+<a href="https://github.com/alibaba/transmittable-thread-local/fork"><img src="https://img.shields.io/github/forks/alibaba/transmittable-thread-local" alt="GitHub Forks"></a>
+<a href="https://github.com/alibaba/transmittable-thread-local/network/dependents"><img src="https://badgen.net/github/dependents-repo/alibaba/transmittable-thread-local?label=user%20repos" alt="user repos"></a>
+<a href="https://github.com/alibaba/transmittable-thread-local/issues"><img src="https://img.shields.io/github/issues/alibaba/transmittable-thread-local" alt="GitHub issues"></a>
+<a href="https://github.com/alibaba/transmittable-thread-local/graphs/contributors"><img src="https://img.shields.io/github/contributors/alibaba/transmittable-thread-local" alt="GitHub Contributors"></a>
+<a href="https://github.com/alibaba/transmittable-thread-local"><img src="https://img.shields.io/github/repo-size/alibaba/transmittable-thread-local" alt="GitHub repo size"></a>
+<a href="https://gitpod.io/#https://github.com/alibaba/transmittable-thread-local"><img src="https://img.shields.io/badge/Gitpod-ready--to--code-green?label=gitpod&logo=gitpod&logoColor=white" alt="gitpod: Ready to Code"></a>
+</p>
 
 [📖 English Documentation](README-EN.md) | 📖 中文文档
 
@@ -22,7 +24,6 @@
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
 
 - [🔧 功能](#-%E5%8A%9F%E8%83%BD)
 - [🎨 需求场景](#-%E9%9C%80%E6%B1%82%E5%9C%BA%E6%99%AF)
@@ -34,7 +35,6 @@
         - [2.2 修饰线程池](#22-%E4%BF%AE%E9%A5%B0%E7%BA%BF%E7%A8%8B%E6%B1%A0)
         - [2.3 使用`Java Agent`来修饰`JDK`线程池实现类](#23-%E4%BD%BF%E7%94%A8java-agent%E6%9D%A5%E4%BF%AE%E9%A5%B0jdk%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%AE%9E%E7%8E%B0%E7%B1%BB)
             - [`Java Agent`的启动参数配置](#java-agent%E7%9A%84%E5%90%AF%E5%8A%A8%E5%8F%82%E6%95%B0%E9%85%8D%E7%BD%AE)
-            - [关于`boot class path`](#%E5%85%B3%E4%BA%8Eboot-class-path)
 - [🔌 Java API Docs](#-java-api-docs)
 - [🍪 Maven依赖](#-maven%E4%BE%9D%E8%B5%96)
 - [🔨 关于编译构建与`IDE`开发](#-%E5%85%B3%E4%BA%8E%E7%BC%96%E8%AF%91%E6%9E%84%E5%BB%BA%E4%B8%8Eide%E5%BC%80%E5%8F%91)
@@ -43,6 +43,7 @@
 - [🗿 更多文档](#-%E6%9B%B4%E5%A4%9A%E6%96%87%E6%A1%A3)
 - [📚 相关资料](#-%E7%9B%B8%E5%85%B3%E8%B5%84%E6%96%99)
     - [JDK Core Classes](#jdk-core-classes)
+- [💝 Who used](#-who-used)
 - [👷 Contributors](#-contributors)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -51,8 +52,7 @@
 
 # 🔧 功能
 
-👉 在使用线程池等会池化复用线程的执行组件情况下，提供`ThreadLocal`值的传递功能，解决异步执行时上下文传递的问题。
-一个`Java`标准库本应为框架/中间件设施开发提供的标配能力，本库功能聚焦 & 0依赖，支持`Java` 17/16/15/14/13/12/11/10/9/8/7/6。
+👉 `TransmittableThreadLocal`(`TTL`)：在使用线程池等会池化复用线程的执行组件情况下，提供`ThreadLocal`值的传递功能，解决异步执行时上下文传递的问题。一个`Java`标准库本应为框架/中间件设施开发提供的标配能力，本库功能聚焦 & 0依赖，支持`Java` 17/16/15/14/13/12/11/10/9/8/7/6。
 
 `JDK`的[`InheritableThreadLocal`](https://docs.oracle.com/javase/10/docs/api/java/lang/InheritableThreadLocal.html)类可以完成父线程到子线程的值传递。但对于使用线程池等会池化复用线程的执行组件的情况，线程由线程池创建好，并且线程是池化起来反复使用的；这时父子线程关系的`ThreadLocal`值传递已经没有意义，应用需要的实际上是把 **任务提交给线程池时**的`ThreadLocal`值传递到 **任务执行时**。
 
@@ -85,10 +85,32 @@
 `TransmittableThreadLocal`继承`InheritableThreadLocal`，使用方式也类似。相比`InheritableThreadLocal`，添加了
 
 1. `copy`方法  
-    用于定制 **任务提交给线程池时** 的`ThreadLocal`值传递到 **任务执行时** 的拷贝行为，缺省传递的是引用。  
-    注意：如果跨线程传递了对象引用因为不再有线程封闭，与`InheritableThreadLocal.childValue`一样，使用者/业务逻辑要注意传递对象的线程安全。
+   用于定制 **任务提交给线程池时** 的`ThreadLocal`值传递到 **任务执行时** 的拷贝行为，缺省是简单的赋值传递。
+    - 注意：如果传递的是一个对象（引用类型）且没有做深拷贝，如直接传递引用或是浅拷贝，那么
+        - 跨线程传递而不再有线程封闭，传递对象在多个线程之间是有共享的；
+        - 与`InheritableThreadLocal.childValue`一样，使用者/业务逻辑要注意传递对象的线程安全。
 1. `protected`的`beforeExecute`/`afterExecute`方法  
-    执行任务(`Runnable`/`Callable`)的前/后的生命周期回调，缺省是空操作。
+   执行任务(`Runnable`/`Callable`)的前/后的生命周期回调，缺省是空操作。
+
+<blockquote>
+<details>
+
+<summary>关于<code>copy</code>方法 的 展开说明</summary>
+<br>
+
+<p>严谨地说，应该是『传递行为』，而不是『拷贝行为』；相应的，这个方法应该命名成<code>transmiteeValue</code>，与<code>InheritableThreadLocal.childValue</code>方法有一致的命名风格。
+
+<p>但多数情况下，传递的是一个复杂的对象，习惯上会先想到的是如何做拷贝，如深拷贝、浅拷贝；命名成<code>copy</code>反而更容易理解这个过程与行为了。 😂
+
+<p>关于构词后缀<code>er</code>与<code>ee</code>的说明：
+
+<ul>
+<li><code>transmit</code>是动词传递，<code>transmitter</code>动作的执行者/主动方，而<code>transmitee</code>动作的接收者/被动方。</li>
+<li><code>er</code>与<code>ee</code>后缀的常见词是<code>employer</code>（雇主）/<code>employee</code>（雇员）、<code>caller</code>（调用者）/<code>callee</code>（被调用者）。</li>
+</ul>
+
+</details>
+</blockquote>
 
 具体使用方式见下面的说明。
 
@@ -148,7 +170,7 @@ String value = context.get();
 ```
 
 **_注意_**：  
-即使是同一个`Runnable`任务多次提交到线程池时，每次提交时都需要修饰操作（即`TtlRunnable.get(task)`），以抓取当时`TransmittableThreadLocal`上下文的值；即如果同一个任务下一次提交时不执行修饰而仍然使用上一次的`TtlRunnable`，则提交的任务运行时会是上次抓取的上下文。示例代码如下：
+即使是同一个`Runnable`任务多次提交到线程池时，每次提交时都需要通过修饰操作（即`TtlRunnable.get(task)`）以抓取这次提交时的`TransmittableThreadLocal`上下文的值；即如果同一个任务下一次提交时不执行修饰而仍然使用上一次的`TtlRunnable`，则提交的任务运行时会是之前修饰操作所抓取的上下文。示例代码如下：
 
 ```java
 // 第一次提交
@@ -270,13 +292,20 @@ Demo参见[`AgentDemo.kt`](src/test/java/com/alibaba/demo/ttl/agent/AgentDemo.kt
         - `-javaagent:path/to/transmittable-thread-local-2.x.y.jar=ttl.agent.enable.timer.task:false`
     - 更多关于`TTL Agent`参数的配置说明详见[`TtlAgent.java`的JavaDoc](src/main/java/com/alibaba/ttl/threadpool/agent/TtlAgent.java)。
 
-> **关于`java.util.TimerTask`/`java.util.Timer`**
->
-> `Timer`是`JDK 1.3`的老类，不推荐使用`Timer`类。
->
-> 推荐用[`ScheduledExecutorService`](https://docs.oracle.com/javase/10/docs/api/java/util/concurrent/ScheduledExecutorService.html)。  
-> `ScheduledThreadPoolExecutor`实现更强壮，并且功能更丰富。
-> 如支持配置线程池的大小（`Timer`只有一个线程）；`Timer`在`Runnable`中抛出异常会中止定时执行。更多说明参见[10. **Mandatory** Run multiple TimeTask by using ScheduledExecutorService rather than Timer because Timer will kill all running threads in case of failing to catch exceptions. - Alibaba Java Coding Guidelines](https://alibaba.github.io/Alibaba-Java-Coding-Guidelines/#concurrency)。
+<blockquote>
+<details>
+
+<summary>关于<code>java.util.TimerTask</code>/<code>java.util.Timer</code> 的 展开说明</summary>
+<br>
+
+<p><code>Timer</code>是<code>JDK 1.3</code>的老类，不推荐使用<code>Timer</code>类。
+
+<p>推荐用<a href="https://docs.oracle.com/javase/10/docs/api/java/util/concurrent/ScheduledExecutorService.html" rel="nofollow"><code>ScheduledExecutorService</code></a>。<br>
+<code>ScheduledThreadPoolExecutor</code>实现更强壮，并且功能更丰富。
+如支持配置线程池的大小（<code>Timer</code>只有一个线程）；<code>Timer</code>在<code>Runnable</code>中抛出异常会中止定时执行。更多说明参见 <a href="https://alibaba.github.io/Alibaba-Java-Coding-Guidelines/#concurrency" rel="nofollow">10. <strong>Mandatory</strong> Run multiple TimeTask by using ScheduledExecutorService rather than Timer because Timer will kill all running threads in case of failing to catch exceptions. - Alibaba Java Coding Guidelines</a>。</p>
+
+</details>
+</blockquote>
 
 #### `Java Agent`的启动参数配置
 
@@ -309,26 +338,36 @@ java -javaagent:path/to/transmittable-thread-local-2.5.1.jar \
     com.alibaba.demo.ttl.agent.AgentDemo
 ```
 
-#### 关于`boot class path`
 
-因为修饰了`JDK`标准库的类，标准库由`bootstrap class loader`加载；修饰后的`JDK`类引用了`TTL`的代码，所以`Java Agent`使用方式下`TTL Jar`文件需要配置到`boot class path`上。
 
-`TTL`从`v2.6.0`开始，加载`TTL Agent`时会自动设置`TTL Jar`到`boot class path`上。  
-**_注意_**：不能修改从`Maven`库下载的`TTL Jar`文件名（形如`transmittable-thread-local-2.x.y.jar`）。
-如果修改了，则需要自己手动通过`-Xbootclasspath JVM`参数来显式配置（就像`TTL`之前的版本的做法一样）。
+<blockquote>
+<details>
 
-自动设置`TTL Jar`到`boot class path`的实现是通过指定`TTL Java Agent Jar`文件里`manifest`文件（`META-INF/MANIFEST.MF`）的`Boot-Class-Path`属性：
+<summary>关于<code>boot class path</code> 的 展开说明</summary>
+<br>
 
-> `Boot-Class-Path`
->
-> A list of paths to be searched by the bootstrap class loader. Paths represent directories or libraries (commonly referred to as JAR or zip libraries on many platforms).
-> These paths are searched by the bootstrap class loader after the platform specific mechanisms of locating a class have failed. Paths are searched in the order listed.
+<p>因为修饰了<code>JDK</code>标准库的类，标准库由<code>bootstrap class loader</code>加载；修饰后的<code>JDK</code>类引用了<code>TTL</code>的代码，所以<code>Java Agent</code>使用方式下<code>TTL Jar</code>文件需要配置到<code>boot class path</code>上。</p>
 
-更多详见
+<p><code>TTL</code>从<code>v2.6.0</code>开始，加载<code>TTL Agent</code>时会自动设置<code>TTL Jar</code>到<code>boot class path</code>上。<br>
+<strong><em>注意</em></strong>：不能修改从<code>Maven</code>库下载的<code>TTL Jar</code>文件名（形如<code>transmittable-thread-local-2.x.y.jar</code>）。
+如果修改了，则需要自己手动通过<code>-Xbootclasspath JVM</code>参数来显式配置（就像<code>TTL</code>之前的版本的做法一样）。</p>
 
-- [`Java Agent`规范 - `JavaDoc`](https://docs.oracle.com/javase/10/docs/api/java/lang/instrument/package-summary.html#package.description)
-- [JAR File Specification - JAR Manifest](https://docs.oracle.com/javase/10/docs/specs/jar/jar.html#jar-manifest)
-- [Working with Manifest Files - The Java™ Tutorials](https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html)
+<p>自动设置<code>TTL Jar</code>到<code>boot class path</code>的实现是通过指定<code>TTL Java Agent Jar</code>文件里<code>manifest</code>文件（<code>META-INF/MANIFEST.MF</code>）的<code>Boot-Class-Path</code>属性：</p>
+
+<p><code>Boot-Class-Path</code></p>
+<p>A list of paths to be searched by the bootstrap class loader. Paths represent directories or libraries (commonly referred to as JAR or zip libraries on many platforms).
+These paths are searched by the bootstrap class loader after the platform specific mechanisms of locating a class have failed. Paths are searched in the order listed.</p>
+
+<p>更多详见</p>
+
+<ul>
+<li><a href="https://docs.oracle.com/javase/10/docs/api/java/lang/instrument/package-summary.html#package.description" rel="nofollow"><code>Java Agent</code>规范 - <code>JavaDoc</code></a></li>
+<li><a href="https://docs.oracle.com/javase/10/docs/specs/jar/jar.html#jar-manifest" rel="nofollow">JAR File Specification - JAR Manifest</a></li>
+<li><a href="https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html" rel="nofollow">Working with Manifest Files - The Java™ Tutorials</a></li>
+</ul>
+
+</details>
+</blockquote>
 
 # 🔌 Java API Docs
 
@@ -342,11 +381,11 @@ java -javaagent:path/to/transmittable-thread-local-2.5.1.jar \
 <dependency>
     <groupId>com.alibaba</groupId>
     <artifactId>transmittable-thread-local</artifactId>
-    <version>2.12.1</version>
+    <version>2.12.6</version>
 </dependency>
 ```
 
-可以在 [search.maven.org](https://search.maven.org/search?q=g:com.alibaba%20AND%20a:transmittable-thread-local&core=gav) 查看可用的版本。
+可以在 [search.maven.org](https://search.maven.org/artifact/com.alibaba/transmittable-thread-local) 查看可用的版本。
 
 # 🔨 关于编译构建与`IDE`开发
 
@@ -390,7 +429,7 @@ java -javaagent:path/to/transmittable-thread-local-2.x.y.jar \
 
 **_Q2. `MacOS`下，使用`Java Agent`，可能会报`JavaLaunchHelper`的出错信息_**
 
-JDK Bug: <http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=8021205>  
+JDK Bug: <https://bugs.java.com/bugdatabase/view_bug.do?bug_id=8021205>  
 可以换一个版本的`JDK`。我的开发机上`1.7.0_40`有这个问题，`1.6.0_51`、`1.7.0_45`可以运行。  
 \# `1.7.0_45`还是有`JavaLaunchHelper`的出错信息，但不影响运行。
 
@@ -457,12 +496,136 @@ JDK Bug: <http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=8021205>
 - [WeakHashMap](https://docs.oracle.com/javase/10/docs/api/java/util/WeakHashMap.html)
 - [InheritableThreadLocal](https://docs.oracle.com/javase/10/docs/api/java/lang/InheritableThreadLocal.html)
 
+# 💝 Who used
+
+使用了`TTL`的一部分开源项目：
+
+- **中间件**
+    - [`sofastack/sofa-rpc` ![](https://img.shields.io/github/stars/sofastack/sofa-rpc.svg?style=social&label=Star)](https://github.com/sofastack/sofa-rpc) [![star](https://gitee.com/sofastack/sofa-rpc/badge/star.svg?theme=gray)](https://gitee.com/sofastack/sofa-rpc)  
+      SOFARPC is a high-performance, high-extensibility, production-level Java RPC framework
+    - [`dromara/hmily` ![](https://img.shields.io/github/stars/dromara/hmily.svg?style=social&label=Star)](https://github.com/dromara/hmily) [![star](https://gitee.com/dromara/hmily/badge/star.svg?theme=gray)](https://gitee.com/dromara/hmily)  
+      Distributed transaction solutions
+    - [`dromara/dynamic-tp` ![](https://img.shields.io/github/stars/dromara/dynamic-tp.svg?style=social&label=Star)](https://github.com/dromara/dynamic-tp) [![star](https://gitee.com/dromara/dynamic-tp/badge/star.svg?theme=gray)](https://gitee.com/yanhom/dynamic-tp)  
+      轻量级动态线程池，内置监控告警功能，支持线程池上下文传递，基于主流配置中心（已支持Nacos、Apollo，Zookeeper，可通过SPI自定义实现）
+    - [`longtai-cn/hippo4j` ![](https://img.shields.io/github/stars/longtai-cn/hippo4j.svg?style=social&label=Star)](https://github.com/longtai-cn/hippo4j) [![star](https://gitee.com/longtai-cn/hippo4j/badge/star.svg?theme=gray)](https://gitee.com/longtai-cn/hippo4j)  
+      强大的动态线程池，附带监控报警功能（没有依赖中间件），完全遵循阿里巴巴编码规范
+    - [`siaorg/sia-gateway` ![](https://img.shields.io/github/stars/siaorg/sia-gateway.svg?style=social&label=Star)](https://github.com/siaorg/sia-gateway)  
+      微服务路由网关（zuul-plus）
+    - [`huaweicloud/Sermant` ![](https://img.shields.io/github/stars/huaweicloud/Sermant.svg?style=social&label=Star)](https://github.com/huaweicloud/Sermant)  
+      Sermant, a proxyless service mesh solution based on Javaagent.
+    - [`ZTO-Express/zms` ![](https://img.shields.io/github/stars/ZTO-Express/zms.svg?style=social&label=Star)](https://github.com/ZTO-Express/zms) [![star](https://gitee.com/zto_express/zms/badge/star.svg?theme=gray)](https://gitee.com/zto_express/zms)  
+      ZTO Message Service
+    - [`tuya/connector` ![](https://img.shields.io/github/stars/tuya/connector.svg?style=social&label=Star)](https://github.com/tuya/connector)  
+      The connector framework maps cloud APIs to local APIs based on simple configurations and flexible extension mechanisms.
+- **中间件/数据**
+    - [`ppdaicorp/das` ![](https://img.shields.io/github/stars/ppdaicorp/das.svg?style=social&label=Star)](https://github.com/ppdaicorp/das)  
+      数据库访问框架(data access service)，包括数据库控制台das console，数据库客户端das client和数据库服务端das server三部分
+    - [`SimonAlong/Neo` ![](https://img.shields.io/github/stars/SimonAlong/Neo.svg?style=social&label=Star)](https://github.com/SimonAlong/Neo)  
+      Orm框架：基于ActiveRecord思想开发的至简化且功能很全的Orm框架
+    - [`didi/ALITA` ![](https://img.shields.io/github/stars/didi/ALITA.svg?style=social&label=Star)](https://github.com/didi/ALITA)  
+      a layer-based data analysis tool
+    - [`didi/daedalus` ![](https://img.shields.io/github/stars/didi/daedalus.svg?style=social&label=Star)](https://github.com/didi/daedalus)  
+      实现快速创建数据构造流程，数据构造流程的可视化、线上化、持久化、标准化
+    - [`aiwenmo/DataLink` ![](https://img.shields.io/github/stars/aiwenmo/DataLink.svg?style=social&label=Star)](https://github.com/aiwenmo/DataLink)  
+      a new open source solution to bring Flink development to data center
+- **中间件/流程引擎**
+    - [`dromara/liteflow` ![](https://img.shields.io/github/stars/dromara/liteflow.svg?style=social&label=Star)](https://github.com/dromara/liteflow) [![star](https://gitee.com/dromara/liteFlow/badge/star.svg?theme=gray)](https://gitee.com/dromara/liteFlow)  
+      a lightweight and practical micro-process framework
+    - [`alibaba/bulbasaur` ![](https://img.shields.io/github/stars/alibaba/bulbasaur.svg?style=social&label=Star)](https://github.com/alibaba/bulbasaur)  
+      A pluggable, scalable process engine
+- **中间件/日志**
+    - [`dromara/TLog` ![](https://img.shields.io/github/stars/dromara/TLog.svg?style=social&label=Star)](https://github.com/dromara/TLog) [![star](https://gitee.com/dromara/TLog/badge/star.svg?theme=gray)](https://gitee.com/dromara/TLog)  
+      Lightweight distributed log label tracking framework
+    - [`fayechenlong/plumelog` ![](https://img.shields.io/github/stars/fayechenlong/plumelog.svg?style=social&label=Star)](https://github.com/fayechenlong/plumelog) [![star](https://gitee.com/plumeorg/plumelog/badge/star.svg?theme=gray)](https://gitee.com/plumeorg/plumelog)  
+      一个java分布式日志组件，支持百亿级别
+    - [`minbox-projects/minbox-logging` ![](https://img.shields.io/github/stars/minbox-projects/minbox-logging.svg?style=social&label=Star)](https://github.com/minbox-projects/minbox-logging) [![star](https://gitee.com/minbox-projects/minbox-logging/badge/star.svg?theme=gray)](https://gitee.com/minbox-projects/minbox-logging)  
+      分布式零侵入式、链路式请求日志分析框架。提供Admin端点进行采集日志、分析日志、日志告警通知、服务性能分析等。通过Admin Ui可查看实时链路日志信息、在线业务服务列表
+        - [`minbox-projects/api-boot` ![](https://img.shields.io/github/stars/minbox-projects/api-boot.svg?style=social&label=Star)](https://github.com/minbox-projects/api-boot) [![star](https://gitee.com/minbox-projects/api-boot/badge/star.svg?theme=gray)](https://gitee.com/minbox-projects/api-boot)  
+          为接口服务而生的，基于“ SpringBoot”完成扩展和自动配置，内部封装了一系列的开箱即用Starters
+    - [`ofpay/logback-mdc-ttl` ![](https://img.shields.io/github/stars/ofpay/logback-mdc-ttl.svg?style=social&label=Star)](https://github.com/ofpay/logback-mdc-ttl)  
+      logback扩展，集成transmittable-thread-local支持跨线程池的mdc跟踪
+    - [`oldratlee/log4j2-ttl-thread-context-map` ![](https://img.shields.io/github/stars/oldratlee/log4j2-ttl-thread-context-map.svg?style=social&label=Star)](https://github.com/oldratlee/log4j2-ttl-thread-context-map)  
+      Log4j2 TTL ThreadContextMap, Log4j2 extension integrated TransmittableThreadLocal to MDC
+- **中间件/字节码**
+    - [`ymm-tech/easy-byte-coder` ![](https://img.shields.io/github/stars/ymm-tech/easy-byte-coder.svg?style=social&label=Star)](https://github.com/ymm-tech/easy-byte-coder)  
+      Easy-byte-coder is a non-invasive bytecode injection framework based on JVM
+- **业务服务或平台应用**
+    - [`OpenBankProject/OBP-API` ![](https://img.shields.io/github/stars/OpenBankProject/OBP-API.svg?style=social&label=Star)](https://github.com/OpenBankProject/OBP-API)  
+      An open source RESTful API platform for banks that supports Open Banking, XS2A and PSD2 through access to accounts, transactions, counterparties, payments, entitlements and metadata - plus a host of internal banking and management APIs
+    - [`Joolun/JooLun-wx` ![](https://img.shields.io/github/stars/Joolun/JooLun-wx.svg?style=social&label=Star)](https://github.com/Joolun/JooLun-wx) [![star](https://gitee.com/joolun/JooLun-wx/badge/star.svg?theme=gray)](https://gitee.com/joolun/JooLun-wx)  
+      JooLun微信商城
+    - [`gz-yami/mall4j` ![](https://img.shields.io/github/stars/gz-yami/mall4j.svg?style=social&label=Star)](https://github.com/gz-yami/mall4j) [![star](https://gitee.com/gz-yami/mall4j/badge/star.svg?theme=gray)](https://gitee.com/gz-yami/mall4j)  
+      电商商城 java电商商城系统 uniapp商城 多用户商城
+    - [`yangzongzhuan/RuoYi-Cloud` ![](https://img.shields.io/github/stars/yangzongzhuan/RuoYi-Cloud.svg?style=social&label=Star)](https://github.com/yangzongzhuan/RuoYi-Cloud) [![star](https://gitee.com/y_project/RuoYi-Cloud/badge/star.svg?theme=gray)](https://gitee.com/y_project/RuoYi-Cloud)  
+      基于Spring Boot、Spring Cloud & Alibaba的分布式微服务架构权限管理系统
+    - [`somowhere/albedo` ![](https://img.shields.io/github/stars/somowhere/albedo.svg?style=social&label=Star)](https://github.com/somowhere/albedo) [![star](https://gitee.com/somowhere/albedo/badge/star.svg?theme=gray)](https://gitee.com/somowhere/albedo)  
+      基于 Spring Boot 、Spring Security、Mybatis 的RBAC权限管理系统
+    - [`hiparker/opsli-boot` ![](https://img.shields.io/github/stars/hiparker/opsli-boot.svg?style=social&label=Star)](https://github.com/hiparker/opsli-boot)  
+      一款的低代码快速平台，零代码开发，致力于做更简洁的后台管理系统
+    - [`tengshe789/SpringCloud-miaosha` ![](https://img.shields.io/github/stars/tengshe789/SpringCloud-miaosha.svg?style=social&label=Star)](https://github.com/tengshe789/SpringCloud-miaosha)  
+      一个基于spring cloud Greenwich的简单秒杀电子商城项目
+- **工具产品**
+    - [`ssssssss-team/spider-flow` ![](https://img.shields.io/github/stars/ssssssss-team/spider-flow.svg?style=social&label=Star)](https://github.com/ssssssss-team/spider-flow) [![star](https://gitee.com/ssssssss-team/spider-flow/badge/star.svg?theme=gray)](https://gitee.com/ssssssss-team/spider-flow)  
+      新一代爬虫平台，以图形化方式定义爬虫流程，不写代码即可完成爬虫
+    - [`nekolr/slime` ![](https://img.shields.io/github/stars/nekolr/slime.svg?style=social&label=Star)](https://github.com/nekolr/slime)  
+      🍰 一个可视化的爬虫平台
+    - [`zjcscut/octopus` ![](https://img.shields.io/github/stars/zjcscut/octopus.svg?style=social&label=Star)](https://github.com/zjcscut/octopus)  
+      长链接压缩为短链接的服务
+    - [`xggz/mqr` ![](https://img.shields.io/github/stars/xggz/mqr.svg?style=social&label=Star)](https://github.com/xggz/mqr) [![star](https://gitee.com/molicloud/mqr/badge/star.svg?theme=gray)](https://gitee.com/molicloud/mqr)  
+      茉莉QQ机器人（简称MQR），采用mirai的Android协议实现的QQ机器人服务，通过web控制机器人的启停和配置
+- **测试解决方案或工具**
+    - [`alibaba/jvm-sandbox-repeater` ![](https://img.shields.io/github/stars/alibaba/jvm-sandbox-repeater.svg?style=social&label=Star)](https://github.com/alibaba/jvm-sandbox-repeater)  
+      A Java server-side recording and playback solution based on JVM-Sandbox, 录制/回放通用解决方案
+    - [`alibaba/testable-mock` ![](https://img.shields.io/github/stars/alibaba/testable-mock.svg?style=social&label=Star)](https://github.com/alibaba/testable-mock)  
+      换种思路写Mock，让单元测试更简单
+    - [`shulieTech/Takin` ![](https://img.shields.io/github/stars/shulieTech/Takin.svg?style=social&label=Star)](https://github.com/shulieTech/Takin)  
+      全链路压测平台，measure online environmental performance test for full-links, Especially for microservices
+        - [`shulieTech/LinkAgent` ![](https://img.shields.io/github/stars/shulieTech/LinkAgent.svg?style=social&label=Star)](https://github.com/shulieTech/LinkAgent)  
+          a Java-based open-source agent designed to collect data and control Functions for Java applications through JVM bytecode, without modifying applications codes
+    - [`alibaba/virtual-environment` ![](https://img.shields.io/github/stars/alibaba/virtual-environment.svg?style=social&label=Star)](https://github.com/alibaba/virtual-environment)  
+      Route isolation with service sharing, 阿里测试环境服务隔离和联调机制的`Kubernetes`版实现
+- **`Spring Cloud`/`Spring Boot`的框架方案/脚手架**
+    - [`zlt2000/microservices-platform` ![](https://img.shields.io/github/stars/zlt2000/microservices-platform.svg?style=social&label=Star)](https://github.com/zlt2000/microservices-platform) [![star](https://gitee.com/zlt2000/microservices-platform/badge/star.svg?theme=gray)](https://gitee.com/zlt2000/microservices-platform)  
+      基于SpringBoot2.x、SpringCloud和SpringCloudAlibaba并采用前后端分离的企业级微服务多租户系统架构
+    - [`zuihou/lamp-cloud` ![](https://img.shields.io/github/stars/zuihou/lamp-cloud.svg?style=social&label=Star)](https://github.com/zuihou/lamp-cloud) [![star](https://gitee.com/zuihou111/lamp-cloud/badge/star.svg?theme=gray)](https://gitee.com/zuihou111/lamp-cloud)  
+      基于Jdk11 + SpringCloud + SpringBoot 的微服务快速开发平台，其中的可配置的SaaS功能尤其闪耀， 具备RBAC功能、网关统一鉴权、Xss防跨站攻击、自动代码生成、多种存储系统、分布式事务、分布式定时任务等多个模块，支持多业务系统并行开发， 支持多服务并行开发，可以作为后端服务的开发脚手架
+        - [`zuihou/lamp-util` ![](https://img.shields.io/github/stars/zuihou/lamp-util.svg?style=social&label=Star)](https://github.com/zuihou/lamp-util) [![star](https://gitee.com/zuihou111/lamp-util/badge/star.svg?theme=gray)](https://gitee.com/zuihou111/lamp-util)  
+          打造一套兼顾 SpringBoot 和 SpringCloud 项目的公共工具类
+    - [`YunaiV/ruoyi-vue-pro` ![](https://img.shields.io/github/stars/YunaiV/ruoyi-vue-pro.svg?style=social&label=Star)](https://github.com/YunaiV/ruoyi-vue-pro)  [![star](https://gitee.com/zhijiantianya/ruoyi-vue-pro/badge/star.svg?theme=gray)](https://gitee.com/zhijiantianya/ruoyi-vue-pro)  
+      一套全部开源的企业级的快速开发平台。基于 Spring Boot + MyBatis Plus + Vue & Element 实现的后台管理系统 + 微信小程序，支持 RBAC 动态权限、数据权限、SaaS 多租户、Activiti + Flowable 工作流、三方登录、支付、短信、商城等功能。
+    - [`matevip/matecloud` ![](https://img.shields.io/github/stars/matevip/matecloud.svg?style=social&label=Star)](https://github.com/matevip/matecloud) [![star](https://gitee.com/matevip/matecloud/badge/star.svg?theme=gray)](https://gitee.com/matevip/matecloud)  
+      一款基于Spring Cloud Alibaba的微服务架构
+    - [`gavenwangcn/vole` ![](https://img.shields.io/github/stars/gavenwangcn/vole.svg?style=social&label=Star)](https://github.com/gavenwangcn/vole)  
+      SpringCloud 微服务业务脚手架
+    - [`liuweijw/fw-cloud-framework` ![](https://img.shields.io/github/stars/liuweijw/fw-cloud-framework.svg?style=social&label=Star)](https://github.com/liuweijw/fw-cloud-framework) [![star](https://gitee.com/liuweijw/fw-cloud-framework/badge/star.svg?theme=gray)](https://gitee.com/liuweijw/fw-cloud-framework)  
+      基于springcloud全家桶开发分布式框架（支持oauth2认证授权、SSO登录、统一下单、微信公众号服务、Shardingdbc分库分表、常见服务监控、链路监控、异步日志、redis缓存等功能），实现基于Vue全家桶等前后端分离项目工程
+    - [`liuht777/Taroco` ![](https://img.shields.io/github/stars/liuht777/Taroco.svg?style=social&label=Star)](https://github.com/liuht777/Taroco)  
+      整合Nacos、Spring Cloud Alibaba，提供了一系列starter组件， 同时提供服务治理、服务监控、OAuth2权限认证，支持服务降级/熔断、服务权重
+    - [`mingyang66/spring-parent` ![](https://img.shields.io/github/stars/mingyang66/spring-parent.svg?style=social&label=Star)](https://github.com/mingyang66/spring-parent)  
+      数据库多数据源、Redis多数据源、日志组件、全链路日志追踪、埋点扩展点、Netty、微服务、开发基础框架支持、异常统一处理、返回值、跨域、API路由、监控等
+    - [`yzcheng90/ms` ![](https://img.shields.io/github/stars/yzcheng90/ms.svg?style=social&label=Star)](https://github.com/yzcheng90/ms)  
+      一个前后分离的分布式 spring cloud 框架(全家桶)，这里有统一认证，统一网关等等功能，是一个非常简洁的微服务脚手架
+    - [`fafeidou/fast-cloud-nacos` ![](https://img.shields.io/github/stars/fafeidou/fast-cloud-nacos.svg?style=social&label=Star)](https://github.com/fafeidou/fast-cloud-nacos)  
+      致力于打造一个基于nacos为注册中心，结合企业开发习惯，总结的一些基本的实现方式
+    - [`HongZhaoHua/jstarcraft-core` ![](https://img.shields.io/github/stars/HongZhaoHua/jstarcraft-core.svg?style=social&label=Star)](https://github.com/HongZhaoHua/jstarcraft-core)  
+      目标是提供一个通用的Java核心编程框架,作为搭建其它框架或者项目的基础. 让相关领域的研发人员能够专注高层设计而不用关注底层实现. 涵盖了缓存,编解码,通讯,事件,输入/输出,监控,存储,配置,脚本和事务10个方面
+    - [`budwk/budwk` ![](https://img.shields.io/github/stars/budwk/budwk.svg?style=social&label=Star)](https://github.com/budwk/budwk) [![star](https://gitee.com/budwk/budwk/badge/star.svg?theme=gray)](https://gitee.com/budwk/budwk)  
+      `BudWk` 原名 [`NutzWk` ![](https://img.shields.io/github/stars/Wizzercn/NutzWk.svg?style=social&label=Star)](https://github.com/Wizzercn/NutzWk) [![star](https://gitee.com/wizzer/NutzWk/badge/star.svg?theme=gray)](https://gitee.com/wizzer/NutzWk)，基于国产框架 nutz 及 nutzboot 开发的开源Web基础项目，集权限体系、系统参数、数据字典、站内消息、定时任务、CMS、微信等最常用功能，不庞杂、不面面俱到，使其具有上手容易、开发便捷、扩展灵活等特性，特别适合各类大中小型定制化项目需求
+    - [`yinjihuan/spring-cloud` ![](https://img.shields.io/github/stars/yinjihuan/spring-cloud.svg?style=social&label=Star)](https://github.com/yinjihuan/spring-cloud)  
+      《Spring Cloud微服务-全栈技术与案例解析》和《Spring Cloud微服务 入门 实战与进阶》配套源码
+    - [`louyanfeng25/ddd-demo` ![](https://img.shields.io/github/stars/louyanfeng25/ddd-demo.svg?style=social&label=Star)](https://github.com/louyanfeng25/ddd-demo)  
+      《深入浅出DDD》讲解的演示项目，为了能够更好的理解Demo中的分层与逻辑处理，我强烈建议你配合小册来深入了解DDD。
+
+更多使用`TTL`的开源项目 参见 [![user repos](https://badgen.net/github/dependents-repo/alibaba/transmittable-thread-local?label=user%20repos)](https://github.com/alibaba/transmittable-thread-local/network/dependents)
+
 # 👷 Contributors
 
 - Jerry Lee \<oldratlee at gmail dot com> [@oldratlee](https://github.com/oldratlee)
 - Yang Fang \<snoop.fy at gmail dot com> [@driventokill](https://github.com/driventokill)
 - Zava Xu \<zava.kid at gmail dot com> [@zavakid](https://github.com/zavakid)
 - wuwen \<wuwen.55 at aliyun dot com> [@wuwen5](https://github.com/wuwen5)
-- Xiaowei Shi \<179969622 at qq dot com>  [@xwshiustc](https://github.com/xwshiustc)
+- Xiaowei Shi \<179969622 at qq dot com> [@xwshiustc](https://github.com/xwshiustc)
 - David Dai \<351450944 at qq dot com> [@LNAmp](https://github.com/LNAmp)
 - Your name here :-)
+
+[![GitHub Contributors](https://contrib.rocks/image?repo=alibaba/transmittable-thread-local)](https://github.com/alibaba/transmittable-thread-local/graphs/contributors)
